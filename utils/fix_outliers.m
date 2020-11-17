@@ -1,9 +1,13 @@
-function output = fix_outliers(input)
+function output = fix_outliers(input,tol)
 
 % NEED TO STILL TEST THIS FUNCTION
 
+if nargin < 2
+    tol = 1E-9;
+end
+
 n = length(input);
-outlier_vector = isoutlier(input);
+outlier_vector = isoutlier(input) | (abs(input) <= tol);
 
 
 for i = 1:n

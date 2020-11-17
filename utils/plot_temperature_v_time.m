@@ -26,10 +26,10 @@ end
 
 % Plot temperature v. time
 f = figure;
-s1 = scatter(input.time(fidx:end)./60,temp1(fidx:end) + k2c,20);
+s1 = scatter(input.erau_time(fidx:end)./60,temp1(fidx:end) + k2c,20);
 hold on; grid on;
-s2 = scatter(input.time(fidx:end)./60,temp2(fidx:end) + k2c,20);
-s3 = scatter(input.time(fidx:end)./60,temp3(fidx:end) + k2c,20);
+s2 = scatter(input.erau_time(fidx:end)./60,temp2(fidx:end) + k2c,20);
+s3 = scatter(input.erau_time(fidx:end)./60,temp3(fidx:end) + k2c,20);
 s1.MarkerFaceColor = 'b'; s2.MarkerFaceColor = 'r'; s3.MarkerFaceColor = 'y';
 title(sprintf('%s Temperature v. Time',flightID));
 xlabel('Time (min)'); ylabel('Temperature (C)');

@@ -1,4 +1,4 @@
-function f = plot_alt_v_time(input,flightID)
+function f = plot_altitude_v_time(input,flightID)
 % Function that outputs a plot of altitude (in kilometers) versus time (in
 % minutes) for MURI flights
 
@@ -9,7 +9,7 @@ fidx = find((input.alt - 100) > mean(input.alt(sidx:sidx+20)),1) - 60;
 
 % Plot altitude v. time
 f = figure;
-s1 = scatter(input.time(fidx:end)./60,input.alt(fidx:end)./1000,20);
+s1 = scatter(input.erau_time(fidx:end)./60,input.alt(fidx:end)./1000,20);
 grid on;
 s1.MarkerFaceColor = 'b';
 title(sprintf('%s Altitude v. Time',flightID));
